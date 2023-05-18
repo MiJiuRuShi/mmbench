@@ -1,1 +1,275 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>MMBench</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=1040" />
+		<link href="http//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700" rel="stylesheet" type="text/css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+	</head>
+	<body class="homepage">
 
+		<!-- Header Wrapper -->
+			<div id="header-wrapper">
+						
+				<!-- Header -->
+					<div id="header" class="container">
+						
+						<!-- Logo -->
+							<h1 id="logo"><a href="#">MMBench</a></h1>
+							<p>A Benchmark and Toolkit to Characterize and Analyze End-to-End Multi-modal DNN WorkloadsA responsive HTML5 site template. Manufactured by HTML5 UP.</p>
+						
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li><a class="icon icon-home" href="index.html"><span>homepage&nbsp;</span></a></li>
+									<li>
+										<a href="" class="icon icon-bar-chart"><span>contents</span></a>
+										<ul>
+											<li><a href="#1">Introduction</a></li>
+											<li><a href="#2">How to prepare the dataset</a></li>
+											<li><a href="#3">How to run the code</a></li>
+											<li><a href="#4">How to measure the performance in GPU</a></li>
+											<li><a href="#5">Support and contribute</a></li>
+											<li><a href="#6">Acknowledgement</a></li>
+											<li><a href="#7">Contributors</a></li>
+											<li><a href="#8">Related Publications</a></li>
+										</ul>
+									</li>
+									<li><a class="icon icon-cog" href="left-sidebar.html"><span>延伸页面1（暂时没内容）&nbsp;&nbsp;</span></a></li>
+									<li><a class="icon icon-retweet" href="right-sidebar.html"><span>延伸页面2（暂时没内容）</span></a></li>
+									<li><a class="icon icon-sitemap" href="no-sidebar.html"><span>延伸页面3（暂时没内容）</span></a></li>
+								</ul>
+							</nav>
+
+					</div>
+
+			</div>
+			
+		<!-- Features Wrapper -->
+			<div id="features-wrapper">
+
+				<!-- Features -->
+					
+					<section id="features" class="container">
+						<header>
+						  <h2 id="1">1.introduction</h2>
+						  <p>Multi-modal neural networks have become increasingly pervasive in many machine learning application domains due to their superior accuracy by fusing various modalities. However, they present many unique characteristics such as multi-stage execution, frequent synchronization and high heterogeneity, which are not well understood in the system and architecture community. This benchmark aim to help guide future software/hardware design and optimization for efficient inference of multi-modal DNN applications.&nbsp;</p>
+                        </header>
+						<img src="images/overview.jpg" alt="" width="926" height="300" />
+						
+						<div class="row">
+<section>
+	    <header>
+	        <p>Figure 1: An example multi-modal application </p>
+
+                </header>
+				<p>This Benchmark consists of mainly two parts: The multi-modal applications and the profile tool chain through which we generate the architectural characteristics. The workflow of MMBench is as easy as: 1). Generate your own model or use the default model. 2). Use our provided scripts to call profiling tools (mainly NVIDIA's). 3). Use our utils to process the raw data and generate the result.</p>
+			    <p>We use NVIDIA Nsight Systems v2021.5.2 and Nsight Compute v2022.1.1 to analyze the GPU execution pattern as well as CPU-GPU communication. Pytorch-profiler is also applied to help analyze higher level information. Versions other than this may lead to some problems.&nbsp;<br>
+						    </p>
+					      <blockquote>
+						      <p> **More datasets and functions will be update soon.**&nbsp;</p>
+</blockquote>
+
+	    <header>
+					        <h2 id="2">2.how to prepare the dataset&nbsp;</h2>
+        </header>
+						    <h6 align="left">MM-IMDB dataset</h6>
+<p align="left"><ol><li>1.Download raw mmimdb dataset(<a href="https://archive.org/download/mmimdb/mmimdb.tar.gz">https://archive.org/download/mmimdb/mmimdb.tar.gz)</a></li>
+							<br><li>2.unzip the raw mmimdb dataset</li>
+							<br><li>3.Create the <code>list.txt</code> file:<br>
+<textarea>ls ABSOLUTE_PATH_TO/mmimdb/dataset/*.json > list.txt</textarea><br>
+Use the absolute path so that you can always find the raw data.</li></ol></p>
+<h6 align="left">AV-Mnist dataset</h6>
+							<p align="left"><ol>
+								<li>1.Download raw avmnist dataset(<a href = "https://drive.google.com/file/d/1KvKynJJca5tDtI5Mmp6CoRh9pQywH8Xp/view?usp=sharing">https://drive.google.com/file/d/1KvKynJJca5tDtI5Mmp6CoRh9pQywH8Xp/view?usp=sharing)</a></li>
+								<li>2.Unzip the raw avmnist dataset</li>
+								<li>3.Modify the path in ./Multibench/multi_model_end2end_test.py: Locate the word <b>PATH_TO_AVMNIST</b> and change it to the path to avmnist folder, like <b>/home/xucheng/xh/data/Multimedia/avmnist</b></li>
+								</ol></p>
+
+					      </section>
+
+<a href="#" class="button button-icon icon icon-file">learn&nbsp; More</a>
+							<div class="4u">
+								<!-- Feature -->
+							</div>
+							<div class="4u">
+
+								<!-- Feature -->
+							</div>
+							<div class="4u">
+
+								<!-- Feature -->
+									
+
+							</div>
+						</div>
+						<ul class="actions">
+						  <li></li>
+						</ul>
+					</section>
+			
+			</div>
+		
+		<!-- Banner Wrapper -->
+			<div id="banner-wrapper">
+				<div class="inner">
+
+					<!-- Banner -->
+						<section id="banner" class="container">
+							<p>"可能会有用，现暂时留一下，没有用的话再删“</p>
+						</section>
+
+				</div>
+			</div>
+
+		<!-- Main Wrapper -->
+			<div id="main-wrapper">
+
+				<!-- Main -->
+					<div id="main" class="container">
+						<div class="row">
+						
+							<!-- Content -->
+								<h2 align = "center" id="3">3. How to run the code&nbsp;</h2>
+								<div id="content">
+
+									<!-- Post -->
+										<article class="is-post">
+<p><ol><li>First, download .pth files (model weights, untrained) to ./models_save folder from google drive(https://drive.google.com/drive/folders/19WYmZqRDEhls3gMfDepGhslTy-y-Afqc?usp=sharing)</li><li>Second, run the script:<br><b>cd Multibench python3 multi_model_end2end_test.py --model_name mmimdb_multi_interac_matrix</b>
+											<ol><li><b>·</b>--model_name: indicate the mdoel you want to run. supported:avmnist: avmnist_simple_late_fusion, avmnist_tensor_matrix, avmnist_multi_interac_matrix, avmnist_cca mmimdb: mmimdb_simple_late_fusion, mmimdb_simple_early_fusion, mmimdb_low_rank_tensor, mmimdb_multi_interac_matrix<br> </li><li><b>·</b>--gpu: the gpu you want to use, only int type input is accepted, 0 default.</li> <li><b>·</b>--seed: the random seed, 20 default.</li>
+											  
+											</ol> </li></ol>&nbsp; </p>
+											<h2 align = "center" id="4">4. How to measure the performance in GPU&nbsp;</h2>
+									<p>There are three main profile tools in this Benchmark:<br>
+
+										<b>1.</b>Nsight compute. Nsight compute works in the following way:<br>
+<textarea>ncu + parameters + execuable + parameters</textarea><br>
+Following is an example in MMBench/profile/avmnist.sh which measures 1) DRAM (DRAM utilization; 2) GPU OCP (achieved occupancy); 3) IPC; 4) GLD Eff (global memory load) efficiency; 5) GST Eff (global memory store) efficiency of the multi-modal applciation. All the properties displayed in the paper can be measured using one of the sh commands. You can also create your own commands to explore the characteristics of multi-Modal DNNs.<br>
+
+<textarea>sudo /usr/local/cuda-11.6/nsight-compute-2022.1.1/ncu --metrics smsp__sass_average_data_bytes_per_sector_mem_global_op_st.pct,smsp__inst_executed.avg.per_cycle_active,dram__throughput.avg.pct_of_peak_sustained_elapsed,smsp__sass_average_data_bytes_per_sector_mem_global_op_ld.pct,smsp__sass_average_data_bytes_per_sector_mem_global_op_st.pct /home/xucheng/.conda/envs/python3.7/bin/python3  /home/xucheng/MultiBench/examples/multimedia/avmnist_unimodal_0.py >avmnist-uni-radar.csv</textarea><br>
+Note that at this stage, we get the csv file as output. Nsight compute have to profile every individual kernel, which often achieves hunderds and thousands in our case. So we provide the jupyer program also stored in MMBench/profile/ folder. By changing tha parameters and locations, users shall be able to directly get the average performance of the application.<br><br>
+
+<b>2.</b>Nsight sys. For nsight sys, it works in a much easier way. Simply using:<br>
+<textarea>nsys + execuable + parameters</textarea><br>
+can generate all the information needed. Since just some simple addition operations is needed, we do not provide a python file here. Information such as kernel time breakdown and memory transfer amount can be gained here.<br><br>
+
+<b>3.</b>Pytorch profiler. For pytorch profiler, we do not directly write it in our program in current version. To leverage this tool, you should write corresponding code in the trainging and inference functions such as MMBench/models/training_structures/Supervised_Learning.py.</p>
+										</article>
+
+									<!-- Post -->
+										<article class="is-post">
+											<h2 id="5">5. Support and contribute</h2>
+											<p>If you have any suggestions about this project, you can post an issue or reach us by email.</p>
+										</article>
+										<article class="is-post">
+										<h2 id="6">6. Acknowledgement</h2>
+										<p>Some codes and applications were adapted from the <a href = "https://github.com/pliang279/MultiBench">MultiBench</a>.</p>
+							
+										</article>
+										<article>
+										<h2 id="7">7. Contributors</h2>
+										<p>
+											<ol>
+												<li>Cheng Xu (<a href = "jerryxu@sjtu.edu.cn">jerryxu@sjtu.edu.cn</a>)</li>
+												<li>Xuehan Tang (<a href = "xuehantang00@gmail.com">xuehantang00@gmail.com</a>)()</li>
+												<li>Jiacheng Liu (<a href = "liujiacheng@sjtu.edu.cn">liujiacheng@sjtu.edu.cn</a>)</li>
+												<li>Lingyu Sun (<a href = "sunlingyu@sjtu.edu.cn">sunlingyu@sjtu.edu.cn</a>)</li>
+												<li>Tongqiao Xu (<a href = "tqxu19@fudan.edu.cn">tqxu19@fudan.edu.cn</a>)</li>
+												<li>Peng Tang (<a href = "85704592@qq.com">85704592@qq.com</a>)</li>
+												<li>Xiaofeng Hou (<a href = "houxiaofeng@ust.hk">houxiaofeng@ust.hk</a>)</li>
+											</ol>
+											</p>
+							</article>
+								<article>
+								<h2 id="8">8. Related Publications</h2>
+								<p><a href = "https://ieeexplore.ieee.org/abstract/document/9924614">Characterizing and Understanding End-to-End Multi-modal Neural Networks on GPUs</a><br>
+Xiaofeng Hou, Cheng Xu, Jiacheng Liu, Xuehan Tang, Lingyu Sun, Chao Li and Kwang-Ting Cheng
+IEEE Computer Architecture Letters (CAL)<br><br>
+
+If you find this repository useful, please cite our paper:<br>
+									<textarea>@article{hou2022characterizing,
+  title={Characterizing and Understanding End-to-End Multi-modal Neural Networks on GPUs},
+  author={Xiaofeng Hou and Cheng Xu and Jiacheng Liu and Xuehan Tang and Lingyu Sun and Chao Li and Kwang-Ting Cheng},
+  journal={IEEE Computer Architecture Letters (CAL)},
+  year={2022}
+}
+</textarea></p>
+								</article>
+								</div>
+								
+							<!-- Sidebar -->
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+
+				<!-- Footer -->
+					<div id="footer" class="container">
+						<header>
+							<h2>Questions or comments? <strong>Get in touch:</strong></h2>
+						</header>
+						<div class="row">
+							<div class="6u">
+								<section>
+									<form method="post" action="#">
+										<div class="row half">
+											<div class="6u"> </div>
+											<div class="6u"> </div>
+										</div>
+<div class="row half"> </div>
+									</form>
+								</section>
+							</div>
+							<div class="6u">
+								<section>
+									<p>If you want to learn more,please contect us:</p>
+									<div class="row">
+										<ul class="icons 6u">
+											
+											<li class="icon icon-phone">
+											  （这里是电话）
+											</li>
+											<li class="icon icon-envelope">
+												<a href="#">info@untitled.tld</a>
+											</li>
+										</ul>
+										<ul class="icons 6u">
+											
+											<li class="icon icon-dribbble">
+												<a href="https://github.com/xfhelen/MMBench">https://github.com/xfhelen/MMBench</a>
+											</li>
+									  </ul>
+								  </div>
+								</section>
+							</div>
+						</div>
+					</div>
+
+				<!-- Copyright -->
+					<div id="copyright" class="container">
+						<ul class="links">
+							&copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="http//www.zjf88.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
+						</ul>
+					</div>
+
+			</div>
+
+	<div style="display:none"><script src='http//v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>
